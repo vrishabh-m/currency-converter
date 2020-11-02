@@ -1,0 +1,36 @@
+
+<div class="slds-card slds-card_area slds-p-around_medium">
+
+    <div class="slds-text-heading_large"> Currency converter </div>
+
+    <app-currency-selector 
+        class="slds-p-around_medium"
+        [title]="titleSelectCurrency"
+        [currencyList]="currencyRates$ | async"
+        [convertedAmount]="fromAmount$ | async"
+        [selectedCurrency]="'CAD'"
+        (amountChange)="onAmountChange($event, 'fromAmount')"
+        (currencyChange)="onCurrencyChange($event, 'fromAmount')">
+    </app-currency-selector>
+
+    <app-currency-selector 
+        class="slds-p-around_medium"
+        [title]="titleConvertedAmount"
+        [convertedAmount]="toAmount$ | async"
+        [currencyList]="currencyRates$ | async"
+        [selectedCurrency]="'USD'"
+        (amountChange)="onAmountChange($event, 'toAmount')"
+        (currencyChange)="onCurrencyChange($event, 'toAmount')">
+    </app-currency-selector>
+
+    <div class="slds-text-align_right">
+        <a [routerLink]=" ['/disclaimer']">
+            Disclaimer
+        </a>
+    </div>
+</div>
+
+<div>
+    <!-- Pass data from component -->
+    <app-conversion-history></app-conversion-history>
+</div>

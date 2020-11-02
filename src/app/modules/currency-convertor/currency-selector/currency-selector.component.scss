@@ -1,0 +1,13 @@
+
+.slds-form-element_input {
+    width: 60%;
+} 
+
+.slds-form-element_select {
+    width: 40%;
+    padding-left: 10px;
+}
+
+.slds-form-element_input, .slds-form-element_select {
+    display: inline-block;
+}

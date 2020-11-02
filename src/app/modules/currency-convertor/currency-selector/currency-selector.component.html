@@ -1,0 +1,26 @@
+<div class="slds-form-element">
+
+    <div>
+        {{inputLabel}}
+    </div>
+    
+    <div class="slds-form-element__control slds-form-element_input">
+      <input type="number"
+            step="0.1"
+            class="slds-input"
+            [ngModel]="amount"
+            (ngModelChange)="onAmountChange($event)" />
+    </div>
+
+    <div class="slds-form-element__control slds-form-element_select">
+        <div class="slds-select_container">
+            <select class="slds-select" 
+                [ngModel]="selectedCurrency" 
+                (change)="onCurrencyChange($event.target.value)">
+                <option *ngFor="let item of currencyList" [value]="item.code">
+                    {{ item.code }}
+                </option>
+            </select>
+        </div>
+    </div>
+  </div>
