@@ -10,6 +10,15 @@ const initialState: ExchangeRateState = {
     exchangeRates: []
 }
 
+/**
+ *
+ *
+ * @export
+ * @param {ExchangeRateState} [state=initialState]
+ * @param {exchanges.ExchangeRatesUpdatedAction} action
+ * @return {*} 
+ * @description This reducer is responsible to handle exchange rate API actions.
+ */
 export function exchangeRateReducer(state: ExchangeRateState = initialState, 
     action: exchanges.ExchangeRatesUpdatedAction) {
     switch (action.type) {

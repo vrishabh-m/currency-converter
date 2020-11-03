@@ -10,6 +10,15 @@ const initialState: ActionState = {
     amountTo: 1.3273
 }
 
+/**
+ *
+ *
+ * @export
+ * @param {ActionState} [state=initialState]
+ * @param {amount.AmountActions} action
+ * @return {*} 
+ * @description This reducer handles the actions on amount update.
+ */
 export function amountReducer(state: ActionState = initialState, action: amount.AmountActions) {
     switch (action.type) {
         case amount.AMOUNT_CHANGE_FROM:

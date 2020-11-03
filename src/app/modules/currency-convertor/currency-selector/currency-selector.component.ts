@@ -6,6 +6,13 @@ import { ExchangeRate } from '../models/currency';
   templateUrl: './currency-selector.component.html',
   styleUrls: ['./currency-selector.component.scss']
 })
+/**
+ *
+ * @export
+ * @class CurrencySelectorComponent
+ * @description This class is a shared class, which is responsible to update amount, currency.
+ * And if user changes amount or currency, it passes the event to its parent component
+ */
 export class CurrencySelectorComponent {
 
   public inputLabel: string = '';

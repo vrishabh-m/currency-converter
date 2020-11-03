@@ -9,6 +9,11 @@ import { CurrencyConverterDataService } from "../../currency-converter.data.serv
 import * as exchanges from "../actions/exchange-rates";
 
 @Injectable()
+/**
+ * @export
+ * @class CurrencyEffects
+ * @description Currency update class has implemented NgRx Effects to do API fetching. 
+ */
 export class CurrencyEffects {
 
   @Effect()

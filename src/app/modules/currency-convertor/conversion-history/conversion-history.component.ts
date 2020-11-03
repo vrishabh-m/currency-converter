@@ -8,6 +8,12 @@ import { ConversionHistoryColumnDefinitionService } from './conversion-history.c
   styleUrls: ['./conversion-history.component.scss'],
   providers: [ConversionHistoryColumnDefinitionService]
 })
+/**
+ *
+ * @export
+ * @class ConversionHistoryComponent
+ * @description This class is responsible to show the history of all the trasactions performed on currency component
+ */
 export class ConversionHistoryComponent implements OnInit {
 
   public columnDefs: any;

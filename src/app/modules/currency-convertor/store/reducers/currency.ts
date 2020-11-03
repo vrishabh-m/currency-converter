@@ -17,6 +17,15 @@ const initialState: CurrencyState = {
     }
 }
 
+/**
+ *
+ *
+ * @export
+ * @param {CurrencyState} [state=initialState]
+ * @param {currency.CurrencyChangeActions} action
+ * @return {*} 
+ * @description This reducer is responsible to handle the actions on currency change
+ */
 export function currencyReducer(state: CurrencyState = initialState, 
     action: currency.CurrencyChangeActions) {
 

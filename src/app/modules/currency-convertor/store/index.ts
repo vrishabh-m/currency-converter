@@ -4,12 +4,21 @@ import * as fromExchangeRates from './reducers/exchange-rates';
 import * as fromAmount from './reducers/amount';
 import * as fromCurrency from './reducers/currency';
 
+/**
+ *
+ * @export
+ * @interface AppState
+ * @description App Level State
+ */
 export interface AppState {
     amount: fromAmount.ActionState;
     currency: fromCurrency.CurrencyState;
     exchanges: fromExchangeRates.ExchangeRateState;
 }
 
+/**
+ * App Level Reducer
+ */
 export const appReducer: ActionReducerMap<AppState> = {
     amount: fromAmount.amountReducer,
     currency: fromCurrency.currencyReducer,
