@@ -15,7 +15,7 @@ export class CurrencySelectorComponent {
   public amountChange: EventEmitter<number> = new EventEmitter<number>();
 
   @Output()
-  public currencyChange: EventEmitter<string> = new EventEmitter<string>();
+  public currencyChange: EventEmitter<ExchangeRate> = new EventEmitter<ExchangeRate>();
 
   @Input() set title(label: string) {
     this.inputLabel = label;
@@ -29,7 +29,7 @@ export class CurrencySelectorComponent {
   public currencyList: ExchangeRate[];
 
   @Input()
-  public selectedCurrency: string;
+  public selectedCurrency: ExchangeRate;
 
   public onAmountChange(amount: string): void {
     const number = parseFloat(amount);
@@ -39,7 +39,18 @@ export class CurrencySelectorComponent {
   }
 
   public onCurrencyChange(currency: string): void {
-    this.currencyChange.emit(currency);
+    const updatedCurrencyObj: ExchangeRate = {
+      code: currency,
+      value: null
+    }
+
+    for(let i = 0; i < this.currencyList.length; i++) {
+      if(this.currencyList[i].code === currency) {
+        updatedCurrencyObj.value = this.currencyList[i].value;
+      }
+    }
+
+    this.currencyChange.emit(updatedCurrencyObj);
   }
 
 }

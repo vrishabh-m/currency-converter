@@ -8,7 +8,7 @@
         [title]="titleSelectCurrency"
         [currencyList]="currencyRates$ | async"
         [convertedAmount]="fromAmount$ | async"
-        [selectedCurrency]="'CAD'"
+        [selectedCurrency]="fromCurrency$ | async"
         (amountChange)="onAmountChange($event, 'fromAmount')"
         (currencyChange)="onCurrencyChange($event, 'fromAmount')">
     </app-currency-selector>
@@ -18,7 +18,7 @@
         [title]="titleConvertedAmount"
         [convertedAmount]="toAmount$ | async"
         [currencyList]="currencyRates$ | async"
-        [selectedCurrency]="'USD'"
+        [selectedCurrency]="toCurrency$ | async"
         (amountChange)="onAmountChange($event, 'toAmount')"
         (currencyChange)="onCurrencyChange($event, 'toAmount')">
     </app-currency-selector>
