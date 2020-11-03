@@ -4,7 +4,7 @@ import { map } from "rxjs/operators";
 
 import HttpService from "../../shared/services/http.service";
 import UrlService from "../../shared/services/url.service";
-import { Currency } from './models/currency';
+import { ExchangeRate } from './models/currency';
 
 @Injectable()
 export class CurrencyConverterDataService {
@@ -12,11 +12,11 @@ export class CurrencyConverterDataService {
     constructor(private httpService: HttpService) {}
 
     
-    public getLatestCurrencyExchangeRates(): Observable<Currency[]> {
+    public getLatestCurrencyExchangeRates(): Observable<ExchangeRate[]> {
         return this.httpService.GET(UrlService.getExchangeRatesUrl())
                     .pipe(
                         map(result => {
-                            return Object.keys(result.rates).map((key): Currency => {
+                            return Object.keys(result.rates).map((key): ExchangeRate => {
                                 return { code: key, value: result.rates[key] };
                             });
                         })

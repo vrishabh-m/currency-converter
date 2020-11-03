@@ -1,4 +1,4 @@
-export interface Currency {
+export interface ExchangeRate {
     code: string;
     value: number;
 }

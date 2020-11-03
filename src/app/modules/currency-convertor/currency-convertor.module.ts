@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 
 //3rd party modules
 import { AgGridModule } from 'ag-grid-angular';
-import { NglModule } from 'ng-lightning';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 
@@ -18,8 +17,8 @@ import { CurrencySelectorComponent } from './currency-selector/currency-selector
 //Services
 import { CurrencyConverterDataService } from './currency-converter.data.service';
 
-import { reducers } from './reducers/index';
-import { CurrencyEffects } from './effects/currencyEffects';
+import { appReducer } from './store/index';
+import { CurrencyEffects } from './store/effects/currency.effects';
 
 @NgModule({
   declarations: [
@@ -30,10 +29,9 @@ import { CurrencyEffects } from './effects/currencyEffects';
   imports: [
     CommonModule,
     FormsModule,
-    NglModule,
     AgGridModule.withComponents([]),
     CurrencyConvertorRoutingModule,
-    StoreModule.forRoot(reducers),
+    StoreModule.forRoot(appReducer),
     EffectsModule.forRoot([CurrencyEffects])
   ],
   providers: [

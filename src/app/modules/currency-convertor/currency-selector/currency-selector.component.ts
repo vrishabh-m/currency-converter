@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
-import { Currency } from '../models/currency';
+import { ExchangeRate } from '../models/currency';
 
 @Component({
   selector: 'app-currency-selector',
@@ -26,7 +26,7 @@ export class CurrencySelectorComponent {
   }
 
   @Input()
-  public currencyList: Currency[];
+  public currencyList: ExchangeRate[];
 
   @Input()
   public selectedCurrency: string;
