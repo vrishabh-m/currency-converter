@@ -7,6 +7,7 @@ import { AgGridModule } from 'ag-grid-angular';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 
+//Routing
 import { CurrencyConvertorRoutingModule } from './currency-convertor-routing.module';
 
 //Components
